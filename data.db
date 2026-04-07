@@ -1,0 +1,21 @@
+import sqlite3 as sql
+
+con = sql.connect("data.db")
+cur = con.cursor()
+
+cur.execute("""CREATE TABLE IF NOT EXISTS users (
+id INTEGER,
+gender INTEGER,
+name TEXT,
+score INTEGER,
+level INTEGER,
+)""")
+
+cur.execute("""CREATE TABLE IF NOT EXISTS games (
+birinchi_ustun INTEGER,
+ikkinchi_ustun INTEGER,
+uchinchi_ustun INTEGER,
+tortinchi_ustun INTEGER,
+)""")
+
+con.close()
